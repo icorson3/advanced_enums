@@ -1,4 +1,6 @@
-## Advanced Enumerable Exercises
+NOTE: _This is an exercise I use to teach programming students Ruby fundamentals._
+
+# Advanced Enumerable Exercises
 
 - clone down this repo and create your own github repository
 - update [this](https://gist.github.com/icorson3/fde332a15da213b4c7c3ab319f28b47f) gist by either commenting on it with your repo link or editing the gist.w

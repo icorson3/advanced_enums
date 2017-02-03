@@ -9,7 +9,7 @@ class VendingMachineTest < Minitest::Test
     vm = VendingMachine.new
 
     assert_equal VendingMachine, vm.class
-  end
+  endg
 
   def test_vending_machine_is_empty
     vm = VendingMachine.new
@@ -18,7 +18,6 @@ class VendingMachineTest < Minitest::Test
   end
 
   def test_vending_machine_has_one_item_in_it
-
     vm = VendingMachine.new
     snack = Snack.new("White Castle Burger", 1)
 
@@ -30,7 +29,6 @@ class VendingMachineTest < Minitest::Test
   end
 
   def test_vending_machine_has_two_items_in_it
-
     vm = VendingMachine.new
     snack1 = Snack.new("White Castle Burger", 1)
     snack2 = Snack.new("Snickers", 4)
@@ -46,7 +44,6 @@ class VendingMachineTest < Minitest::Test
   end
 
   def test_can_gather_just_names_of_snacks
-
     vm = VendingMachine.new
     snack1 = Snack.new("White Castle Burger", 1)
     snack2 = Snack.new("Snickers", 4)
@@ -58,7 +55,6 @@ class VendingMachineTest < Minitest::Test
   end
 
   def test_can_collect_items_by_quantity
-
     vm = VendingMachine.new
     snack1 = Snack.new("White Castle Burger", 1)
     snack2 = Snack.new("Snickers", 4)
@@ -75,8 +71,7 @@ class VendingMachineTest < Minitest::Test
     assert_equal "Burrito", vm.how_many_snacks[4][1].name
   end
 
-  def test_can_collect_all_items_by_first_letter_of_alph
-
+  def test_can_collect_all_items_by_first_letter_of_alphabet
     vm = VendingMachine.new
     snack1 = Snack.new("White Castle Burger", 1)
     snack2 = Snack.new("Snickers", 4)
@@ -92,7 +87,6 @@ class VendingMachineTest < Minitest::Test
   end
 
   def test_total_number_of_items_in_vending_machine
-
     vm = VendingMachine.new
     snack1 = Snack.new("White Castle Burger", 1)
     snack2 = Snack.new("Snickers", 4)
@@ -106,7 +100,6 @@ class VendingMachineTest < Minitest::Test
   end
 
   def test_can_create_string_with_first_letter_of_name
-
     vm = VendingMachine.new
     snack1 = Snack.new("White Castle Burger", 1)
     snack2 = Snack.new("Snickers", 4)
@@ -119,8 +112,7 @@ class VendingMachineTest < Minitest::Test
     assert_equal "WSW", vm.first_letters
   end
 
-  def test_can_move_indexes_by_one
-
+  def test_can_change_quantity_by_one
     vm = VendingMachine.new
     snack1 = Snack.new("White Castle Burger", 1)
     snack2 = Snack.new("Snickers", 4)
@@ -130,8 +122,12 @@ class VendingMachineTest < Minitest::Test
     vm.add_snack(snack2)
     vm.add_snack(snack3)
 
-    assert_equal [1,2,3], vm.change_indexes
+    snack1.increase_quantity_by_one
+    snack2.increase_quantity_by_one
+    snack3.increase_quantity_by_one
+
+    assert_equal 2, vm.inventory[0].quantity
+    assert_equal 5, vm.inventory[1].quantity
+    assert_equal 3, vm.inventory[2].quantity
   end
-
-
 end
