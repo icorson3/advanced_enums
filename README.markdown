@@ -1,4 +1,4 @@
-NOTE: _This is an exercise I use to programming students Ruby fundamentals._
+NOTE: _This is an exercise I use to teach programming students Ruby fundamentals._
 
 # Advanced Enumerable Exercises
 
